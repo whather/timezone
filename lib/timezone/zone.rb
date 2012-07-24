@@ -58,6 +58,11 @@ module Timezone
       rule_for_reference(reference)['offset']
     end
 
+    # Get the zone name ("EST", "PDT", etc.)
+    def name reference=Time.now
+      rule_for_reference(reference)['name']
+    end
+
     def <=> zone #:nodoc:
       utc_offset <=> zone.utc_offset
     end
